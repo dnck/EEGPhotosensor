@@ -1,6 +1,8 @@
 # EEGPhotosensor
 A Python and Matlab library for measuring jitter between a visual stimuli on a monitor controlled by a stimulus computer &amp; markers / triggers received by EEG acquisition software
 
+**Main functions are in Analysis/photosensor_analysis.py**
+
 # Introduction
 Timing is crucial in EEG experiments. We need to be certain that what the subjects sees, and when they see it, is exactly what we intended. For CRT monitors, this means that 1) stimulus presentations are synchronized to the vertical refresh rate of the monitor, 2) triggers indicating stimulus onsets are sent with accurate timing, 3) stimulus timing is accurate even for very short stimulus presentations. In order to test that these assumptions are met, we tested the timing accuracy of the new stimulus computer using Biosemi's optical sensor. The sensor is attached to the monitor to directly measure what gets presented, and, more importantly, when it gets presented. The basic idea is to present test stimuli on the CRT monitor, record the stimulus onsets directly with the optical sensor and simultaneously send notifications (e.g. markers, triggers, etc.) via parallel port to the EEG acquisition software via the EEG amplifier. We then compare the signal recorded by the sensor (read: what really happened on the screen) with what 1) Psychtoolbox and 2) the EEG triggers claim happened. In the present analysis, we look at what the EEG triggers claim about the onset of the visual stimuli. 
 
